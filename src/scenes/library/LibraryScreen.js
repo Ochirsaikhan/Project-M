@@ -4,7 +4,7 @@ import {View, Text} from 'react-native';
 const LibraryScreen = () => {
   return (
     <View>
-      <Text>This is Library Screen!</Text>
+      <Text style={{fontSize: 32}}>This is Library Screen!</Text>
     </View>
   );
 };
