@@ -2,10 +2,6 @@
   "migIndex": 1,
   "data": [
     {
-      "path": "src/assets/fonts/.gitkeep",
-      "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
-    },
-    {
       "path": "src/assets/fonts/Inter-Bold.ttf",
       "sha1": "48747b7a60086f97af0d373febcbd1f1bee87f17"
     },
