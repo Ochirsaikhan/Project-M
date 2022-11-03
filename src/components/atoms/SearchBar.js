@@ -6,19 +6,20 @@ import {Colors, Typography} from '../../styles';
 const SearchBar = () => {
   return (
     <SafeAreaView>
-      <TextInput style={styles.input} />
+      <TextInput style={styles.searchBar} placeholder="Search" />
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  input: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    borderRadius: 8,
-    padding: 10,
+  searchBar: {
     backgroundColor: Colors.ORANGE,
+    height: 40,
+    width: '95%',
+    borderRadius: 8,
+    marginTop: 10,
+    padding: 10,
+    alignSelf: 'center',
   },
 });
 
