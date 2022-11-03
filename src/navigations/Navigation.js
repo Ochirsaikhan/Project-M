@@ -15,12 +15,9 @@ const MyTabs = () => {
       <Tab.Screen
         name="Search"
         component={SearchScreen}
-        options={{
-          tabBarStyle: {
-            position: 'absolute',
-          },
-          tabBarBackground: () => {},
-        }}
+        // Screen component accepts `options` prop which is either an object or
+        // a function that returns an object, that contains various configuration options.
+        options={{headerShown: false}}
       />
     </Tab.Navigator>
   );
