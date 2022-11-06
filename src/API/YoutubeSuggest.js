@@ -6,7 +6,7 @@ export async function fetchSuggestions(query) {
     // This API endpoint is Google's undocumented Internal API that gives list of autocomplete suggestions
     // For JSON, we use client=firefox, and for YouTube only search we use ds=yt
     const response = await fetch(
-      `http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=${query}`,
+      `https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=${query}`,
     );
     if (!response.ok) {
       throw new Error(`HTTP error: ${response.status}`);
