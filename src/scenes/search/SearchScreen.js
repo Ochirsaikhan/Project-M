@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {FlatList, StyleSheet, Text, View} from 'react-native';
 import {Colors, Typography} from '../../styles';
 import SearchBar from '../../components/atoms/SearchBar';
-import {fetchSuggestions} from '../../API/YoutubeSuggest';
+import {fetchSuggestionsAxios} from '../../API/AxiosYouTubeSuggest';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const SearchScreen = () => {
@@ -12,17 +12,17 @@ const SearchScreen = () => {
   const [userInputText, setUserInputText] = useState('');
   const [finalText, setFinalText] = useState();
   const [suggestionsArray, setSuggestionsArray] = useState([]);
-  // const [loading, setLoading] = useState(true);
 
-  // Call the YouTube suggestions function every time userInputText changes
+  // Whenever the userInputText state is changed, we call the fetch function from AxiosYouTubeSuggest,
+  // which returns a promise with JSON data provided by the API and we use that data to update suggestionsArray stat
+  // which will update our UI.
   useEffect(() => {
-    const suggestionsPromise = fetchSuggestions(userInputText);
+    const suggestionsPromise = fetchSuggestionsAxios(userInputText);
     suggestionsPromise
       .then(data => setSuggestionsArray(data[1]))
-      .catch(error => {
-        console.log('There was a porblem in fetching data: ' + error);
-      });
-  }, [userInputText]);
+      .catch(error => console.log(error));
+  }),
+    [userInputText];
 
   // This is a required component for FlatList component, and it
   // takes an "item" from "data" and renders it into the list
